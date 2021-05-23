@@ -1,0 +1,46 @@
+{
+  "name": "quake-be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "test": "cross-env DB_ENV=testing jest",
+    "coverage": "cross-env DB_ENV=testing jest --coverage",
+    "refresh": "node ./activity/refresh-reouter.js",
+    "postinstall": "knex migrate:rollback && knex migrate:latest && knex seed:run"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/__tests__/**"
+    ]
+  },
+  "repository": "https://github.com/cesarhj19/quake-be.git",
+  "author": "cesarhj19 <cesarhj19@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.5",
+    "@turf/distance": "^6.3.0",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "gitignore": "^0.6.0",
+    "helmet": "^4.6.0",
+    "jest": "^26.6.3",
+    "knex": "^0.95.6",
+    "knex-cleaner": "^1.3.1",
+    "moment": "^2.29.1",
+    "node-cron": "^3.0.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.1.3",
+    "turf": "^3.0.14",
+    "twilio": "^3.63.0"
+  }
+}
