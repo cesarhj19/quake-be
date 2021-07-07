@@ -30,7 +30,9 @@ module.exports = {
 
 	staging: {
 		client: 'pg',
-		connection: process.env.DATABASE_URL,
+		connection: {
+			filename: './data/activity.db3',
+		},
 		migrations: {
 			directory: './data/migrations',
 		},
@@ -41,7 +43,9 @@ module.exports = {
 
 	production: {
 		client: 'pg',
-		connection: process.env.DATABASE_URL,
+		connection: {
+			filename: './data/activity.db3',
+		},
 		migrations: {
 			directory: './data/migrations',
 		},
