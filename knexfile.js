@@ -29,7 +29,7 @@ module.exports = {
 	},
 
 	staging: {
-		client: 'pg',
+		client: 'sqlite3',
 		connection: {
 			filename: './data/activity.db3',
 		},
@@ -42,7 +42,7 @@ module.exports = {
 	},
 
 	production: {
-		client: 'pg',
+		client: 'sqlite3',
 		connection: {
 			filename: './data/activity.db3',
 		},
